@@ -4,23 +4,26 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="css/bacardlweb.css" rel="stylesheet">
     <script src="js/placeholder.js" defer></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Gestão de Equipes UFMG">
-    <title>Gerador de Cartas · Protótipo</title>
+    <title>BaCardlWeb · Prototype</title>
 </head>
 
 <body>
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow">
-      <h1>Gerador de Cartas</h1>
+    <header class="navbar sitenav navbar-dark bg-dark flex-md-nowrap shadow">
+      <h1 class="sitetitle">BaCardl Web</h1>
     </header>
     
     <div class="container-fluid">
       <div class="row">
         <div id="editor" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
+          
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions" type="button" role="tab" aria-controls="home" aria-selected="true">Instructions</button>
@@ -35,7 +38,8 @@
               <button class="nav-link" id="generation-tab" data-bs-toggle="tab" data-bs-target="#generation" type="button" role="tab" aria-controls="contact" aria-selected="false">Generate Cards</button>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+
+          <div class="tab-content" id="myTabContent">            
             
             <div class="tab-pane fade show active" id="instructions" aria-labelledby="instructions-tab">
               <h2>Basic Card Imagemaker</h2>
@@ -61,8 +65,9 @@
             
             <div class="tab-pane fade" id="layout" aria-labelledby="settings-tab">
 
+              <h4>Card Layout Info</h4>
+
               <div class="form-group">
-                <label for="cardSettingsForm">Card Layout Info</label>
                 <textarea class="form-control" id="cardSettingsForm" rows="45"></textarea>
               </div>
 
@@ -70,8 +75,9 @@
 
             <div class="tab-pane fade" id="description" aria-labelledby="cards-tab">
 
+              <h4>Card Generation Info</h4>
+
               <div class="form-group">
-                <label for="cardListForm">Card Generation Info</label>
                 <textarea class="form-control" id="cardListForm" rows="45"></textarea>
               </div>
 
@@ -79,7 +85,7 @@
 
             <div class="tab-pane fade" id="generation" aria-labelledby="cards-tab">
 
-              <h3>Generate Cards</h3>
+              <h4>Generate Cards</h4>
               
               <p>Click this button to generate the cards.</p>
 
@@ -93,13 +99,14 @@
         </div>
     
         <div id="resultado" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
+          
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="instruction-tab" data-bs-toggle="tab" data-bs-target="#instruction" type="button" role="tab" aria-controls="home" aria-selected="true">Result</button>
             </li>
           </ul>
           
-          <div class="d-flex">
+          <div class="card-result">
             <img src="imgs/cardstest-0.png"/>
           </div>
 
