@@ -1,0 +1,42 @@
+layout:
+  - name: Titulo
+    type: text
+    start: C11
+    end: G9
+    level: 3
+
+  - name: Ilustra
+    type: image
+    start: B2
+    end: H9
+    level: 1
+
+  - name: TextBox
+    type: image
+    start: B10
+    end: H14
+    level: 1
+    default: tbt.png
+
+  - name: Description
+    type: text
+    start: D12
+    scale: 0.6
+    end: G13
+    level: 2
+
+  - name: Fundo
+    type: image
+    start: A1
+    end: I15
+    level: 0
+    default: bg.jpg
+
+size: 
+  width: 600
+  heigth: 1000
+  unit: px
+
+grid:
+  width: 9
+  heigth: 15

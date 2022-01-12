@@ -22,92 +22,53 @@
     
     <div class="container-fluid">
       <div class="row">
+        
         <div id="editor" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
-          
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions" type="button" role="tab" aria-controls="home" aria-selected="true">Instructions</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="layout-tab" data-bs-toggle="tab" data-bs-target="#layout" type="button" role="tab" aria-controls="profile" aria-selected="false">Card Layout</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="contact" aria-selected="false">Card Description</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="generation-tab" data-bs-toggle="tab" data-bs-target="#generation" type="button" role="tab" aria-controls="contact" aria-selected="false">Generate Cards</button>
-            </li>
-          </ul>
 
-          <div class="tab-content" id="myTabContent">            
-            
-            <div class="tab-pane fade show active" id="instructions" aria-labelledby="instructions-tab">
-              <h2>Basic Card Imagemaker</h2>
+          <div class="form-group">
+            <div class="cardBox" id="uploadBox">            
+              <h5>Upload</h5>
               <p>
-                This is a python script that generates card decks for board game prototypes from simple YAML descriptions. </br>
-                Contrary to other projects, it does not try to be a image editor or a spreadsheed editor, this is WYSIWYG.
+                Upload a zip file containing the layout and description of the cards, alongside images used in their construction.
+                <a class="btn btn-instructions" data-bs-toggle="collapse" href="#instructions" role="button" aria-expanded="false" aria-controls="instructions">
+                  ?
+                </a>
               </p>
 
-              <h3>How to Use</h3>
-              <p>You'll need two files, one with the card layout and one with all the card descriptions. Both files can be found in the tabs above this section.</p>
-
-              <h3>The Grid</h3>
-              <p>
-                A grid is used to position the elements in the canvas. </br>
-                You define the size of the grid you needin the config, for example, the grid below is width: 9 and heigth: 11, and place each element accordingly.
-                Like in a chessboard, column names are letters of the alphabet and row names are numbers.
-              </p>
-              <img src="imgs/grid.png">
-              <p>
-                Then you'll just need to write the top left square your element occupies at the "start" parameter in your configuration yaml file and the bottom right square at the "end" parameter.
-              </p>
-            </div>
-            
-            <div class="tab-pane fade" id="layout" aria-labelledby="settings-tab">
-
-              <h4>Card Layout Info</h4>
-
-              <div class="form-group">
-                <textarea class="form-control" id="cardSettingsForm" rows="45"></textarea>
+              <div class="collapse" id="instructions">
+                <div class="cardBox darker">
+                  <h5>How to Use</h5>
+                  <p>You'll need two files, one with the card layout and one with all the card descriptions, alongside all the images used to decorate the card.</p>
+                  <p>You can download an example ZIP file below and customize it to fit your needs:</p>
+                  <button type="button" class="btn btn-success">Download Example</button>
+                </div>
               </div>
 
+              <input type="file">
             </div>
 
-            <div class="tab-pane fade" id="description" aria-labelledby="cards-tab">
-
-              <h4>Card Generation Info</h4>
-
-              <div class="form-group">
-                <textarea class="form-control" id="cardListForm" rows="45"></textarea>
-              </div>
-
-            </div>
-
-            <div class="tab-pane fade" id="generation" aria-labelledby="cards-tab">
-
-              <h4>Generate Cards</h4>
-              
+            <div class="cardBox" id="generationBox">
+              <h5>Generate Cards</h5>              
               <p>Click this button to generate the cards.</p>
-
-              <div class="form-group">
                 <button type="button" class="btn btn-success">Generate</button>
-              </div>
-
             </div>
-
           </div>
+
         </div>
     
         <div id="resultado" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
           
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="instruction-tab" data-bs-toggle="tab" data-bs-target="#instruction" type="button" role="tab" aria-controls="home" aria-selected="true">Result</button>
-            </li>
-          </ul>
-          
-          <div class="card-result">
+          <div class="cardBox card-result">
+            <h5>Preview: (First Card Only)</h5>
             <img src="imgs/cardstest-0.png"/>
+          </div>
+
+          <div class="cardBox" id="downloadBox">
+            <h5>Download Generated Cards</h5>              
+            <p>Click this button to download the cards.</p>
+            <div class="form-group">
+              <button type="button" class="btn btn-success">Download</button>
+            </div>
           </div>
 
         </div>

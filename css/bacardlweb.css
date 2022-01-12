@@ -1,22 +1,41 @@
 header.sitenav {
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding: 10px 0px 5px 0px;
 }
 
 h1.sitetitle {
+    font-size: 30px;
     color: white;
 }
 
-.tab-content div {
-    padding-top: 15px;
+.cardBox {
+    padding: 15px;
+    background: rgb(221, 220, 220);
+    border-radius: 10px;
+    margin: 20px 10px;
+}
+
+.cardBox.darker {
+    background: rgb(150, 150, 150);
+}
+
+.btn-instructions {
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    background-color: #6d6d6d;
+    border-radius: 50px;
+}
+
+.btn-instructions:hover {
+    color: white;
 }
 
 .card-result {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .card-result img {
-    width: 90%;
+    max-height: 500px;
 }

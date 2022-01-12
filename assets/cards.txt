@@ -1,0 +1,15 @@
+- Titulo: "Grifinória"
+  Ilustra: Gryffindor.png
+  Description: "A casa dos\n Corajosos"
+
+- Titulo: "Corvinal"
+  Ilustra: Ravenclaw.png
+  Description: "A casa dos\n Sábios"
+
+- Titulo: "Lufa-Lufa"
+  Ilustra: Hufflepuff.png
+  Description: "A casa dos\n Honestos"
+
+- Titulo: "Sonserina"
+  Ilustra: Slytherin.png
+  Description: "A casa dos\n Ardilosos"

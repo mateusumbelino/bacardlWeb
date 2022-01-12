@@ -1,0 +1,22 @@
+header.sitenav {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+h1.sitetitle {
+    color: white;
+}
+
+.tab-content div {
+    padding-top: 15px;
+}
+
+.card-result {
+    display: flex;
+    justify-content: center;
+}
+
+.card-result img {
+    width: 90%;
+}
