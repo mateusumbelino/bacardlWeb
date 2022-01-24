@@ -1,0 +1,38 @@
+.layoutForm, .cardForm {
+    background-color: #bababa;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin: 20px 0px 0px 0px;
+}
+
+.layoutForm .fieldGroup {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.layoutForm .fieldGroup.invisible {
+    display: none;
+}
+
+.fieldGroup div {
+    min-width: 30%;
+}
+
+.fieldGroup div label, .level label {
+    min-width: 50px;
+}
+
+.closeBtn {
+    position: relative;
+    top: -30px;
+    left: 95%;
+    margin-bottom: -25px;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    background: #dddcdc;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    width: 30px;
+}

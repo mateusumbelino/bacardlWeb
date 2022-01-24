@@ -6,7 +6,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <link href="css/bacardlweb.css" rel="stylesheet">
-    <script src="js/placeholder.js" defer></script>
+    <link href="css/layoutform.css" rel="stylesheet">
+    <script src="js/dynamicFields.js" defer></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,16 +27,59 @@
         <div id="editor" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
 
           <div class="form-group">
-            <div class="cardBox" id="uploadBox">            
-              <h5>Upload</h5>
+            
+            <div class="cardBox" id="cardAttributeBox">            
+              <h5>Card Options</h5>
+              
               <p>
-                Upload a zip file containing the layout and description of the cards, alongside images used in their construction.
-                <a class="btn btn-instructions" data-bs-toggle="collapse" href="#instructions" role="button" aria-expanded="false" aria-controls="instructions">
+                Configure the Card Resolution
+              </p>
+
+              <div id="cardAttributes">
+                <p>
+                  <label>Width: </label><input type="number" name="cardWidth"/>                
+                </p>
+                <p>
+                  <label>Height: </label><input type="number" name="cardHeight"/>
+                </p>
+                <p>
+                  <label>Unit: </label>
+                  <select name="cardUnit">
+                    <option value="px">px</option>
+                    <option value="cm">cm</option>
+                  </select>
+                </p>
+              </div>
+            </div>
+
+            <div class="cardBox" id="gridBox">            
+              <h5>Grid</h5>
+              
+              <p>
+                Configure the Grid
+              </p>
+
+              <div id="gridElements">
+                <p>
+                  <label>Width: </label><input type="number" name="gridWidth"/>                
+                </p>
+                <p>
+                  <label>Height: </label><input type="number" name="gridHeight"/>
+                </p>
+              </div>
+            </div>
+
+            <div class="cardBox" id="layoutBox">            
+              <h5>Layout</h5>
+              
+              <p>
+                <a class="btn btn-info" onclick="addLayoutField()">Add New Field</a>
+                <a class="btn btn-instructions" data-bs-toggle="collapse" href="#layoutInstructions" role="button" aria-expanded="false" aria-controls="instructions">
                   ?
                 </a>
               </p>
 
-              <div class="collapse" id="instructions">
+              <div class="collapse" id="layoutInstructions">
                 <div class="cardBox darker">
                   <h5>How to Use</h5>
                   <p>You'll need two files, one with the card layout and one with all the card descriptions, alongside all the images used to decorate the card.</p>
@@ -44,13 +88,9 @@
                 </div>
               </div>
 
-              <input type="file">
-            </div>
+              <div id="layoutElements">
 
-            <div class="cardBox" id="generationBox">
-              <h5>Generate Cards</h5>              
-              <p>Click this button to generate the cards.</p>
-                <button type="button" class="btn btn-success">Generate</button>
+              </div>
             </div>
           </div>
 
@@ -58,6 +98,36 @@
     
         <div id="resultado" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
           
+          <div class="cardBox" id="cardsBox">            
+            <h5>Cards</h5>
+            
+            <p>
+              <a class="btn btn-info" onclick="addCardField()">Add New Card</a>
+              <a class="btn btn-instructions" data-bs-toggle="collapse" href="#cardInstructions" role="button" aria-expanded="false" aria-controls="instructions">
+                ?
+              </a>
+            </p>
+
+            <div class="collapse" id="cardInstructions">
+              <div class="cardBox darker">
+                <h5>How to Use</h5>
+                <p>You'll need two files, one with the card layout and one with all the card descriptions, alongside all the images used to decorate the card.</p>
+                <p>You can download an example ZIP file below and customize it to fit your needs:</p>
+                <button type="button" class="btn btn-success">Download Example</button>
+              </div>
+            </div>
+
+            <div id="cardElements">
+
+            </div>
+          </div>
+
+          <div class="cardBox" id="generationBox">
+            <h5>Generate Cards</h5>              
+            <p>Click this button to generate the cards.</p>
+              <button type="button" class="btn btn-success">Generate</button>
+          </div>
+
           <div class="cardBox card-result">
             <h5>Preview: (First Card Only)</h5>
             <img src="imgs/cardstest-0.png"/>
