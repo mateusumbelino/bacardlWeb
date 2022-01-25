@@ -4,7 +4,7 @@ var currentLayoutFields = [];
 const layoutElements = document.getElementById("layoutElements");
 const layoutField = 
 "<div class='fieldGroup'>" +
-"<div> <label>Type<span class='obrigatory'>*</span>:</label> <select name='type' class='layoutFieldType' onchange='showImageFields(this, this.parentNode.parentNode.parentNode)'><option value='text'>Text</option> <option value='image'>Image</option></select> </div>" +
+"<div> <label>Type<span class='obrigatory'>*</span>:</label> <select name='type' class='layoutFieldType' onchange='showTypeFields(this, this.parentNode.parentNode.parentNode)'><option value='text'>Text</option> <option value='image'>Image</option></select> </div>" +
 "<div> <label>Name<span class='obrigatory'>*</span>:</label> <input type='text' class='layoutFieldName' name='name' onchange='registerField(this, this.parentNode.parentNode)'></input> </div>" +
 "</div>" +
 "<div class='fieldGroup'>" +
@@ -14,8 +14,10 @@ const layoutField =
 "<div class='fieldGroup'>" +
 "<div><label>Level<span class='obrigatory'>*</span>:</label> <input type='number' name='level'></input> </div>" +
 "</div>" + 
+"<div class='fieldGroup textDependant'>" +
+"<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' name='scale'></input> </div>" +
+"</div>" + 
 "<div class='fieldGroup imageDependant invisible'>" +
-"<div> <label>Scale<span class='obrigatory'>*</span>:</label> <input type='number' value='1' name='scale'></input> </div>" +
 "<div> <label>Default:</label> <input type='file' name='default'></input></div>" +
 "</div>" + 
 "<div class='closeBtn'> <a onclick='removeLayoutField(this.parentNode.parentNode)'>X</a></div>";
@@ -42,14 +44,16 @@ function registerField(fieldObject, fieldGroup) {
     updateCardFields();
 }
 
-function showImageFields(fieldType, fieldGroup) {
-    
+function showTypeFields(fieldType, fieldGroup) {
     let imageGroup = fieldGroup.getElementsByClassName('imageDependant')[0];
+    let textGroup = fieldGroup.getElementsByClassName('textDependant')[0];
 
     if(fieldType.value == 'image') {
         if(imageGroup.classList.contains('invisible')) imageGroup.classList.remove('invisible');
+        if(!textGroup.classList.contains('invisible')) textGroup.classList.add('invisible');
     } else {
         if(!imageGroup.classList.contains('invisible')) imageGroup.classList.add('invisible');
+        if(textGroup.classList.contains('invisible')) textGroup.classList.remove('invisible');
     }
 }
 
