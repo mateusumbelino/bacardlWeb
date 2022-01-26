@@ -73,7 +73,7 @@ function updateCardFields() {
         if(currentLayoutFields.length == 0) {
             //Write message about no fields
             let message = document.createElement("div");
-            message.innerHTML = "<p> There are no layout fields registered </p>";
+            message.innerHTML = "<p> There are no layout fields registered yet. </p>";
             cardField.appendChild(message);
         } else for(let j=0; j<currentLayoutFields.length; j++) {
             let fieldName = currentLayoutFields[j].name;
@@ -149,10 +149,10 @@ function buildGrid() {
     if(height > 0) {
         //Grid Letter Row
         theTable+= "<tr>";
-        theTable += "<td></td>";
+        theTable += "<td class='GridEmpty'></td>";
 
         for(let j=0; j<width; j++) {
-            theTable += "<td>"+alphabet[j]+"</td>";
+            theTable += "<td class='GridLetter'>"+alphabet[j]+"</td>";
         }
         theTable+= "</tr>";
     }
