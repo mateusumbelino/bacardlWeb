@@ -44,5 +44,3 @@ function getLayout(){
     }
     return array;
 }
-
-
