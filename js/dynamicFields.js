@@ -26,6 +26,7 @@ const cardElements = document.getElementById("cardElements");
 const cardField = "<div class='layoutFieldContainer'></div>"
 +"<div class='closeBtn'> <a onclick='removeCardField(this.parentNode.parentNode)'>X</a></div>";
 
+const gridExample = document.getElementById("gridExample");
 
 function addLayoutField() {
     lastFieldID++;
@@ -135,4 +136,40 @@ function removeLayoutByID(layoutID) {
 
 function removeCardField(cardObject) {
     cardObject.remove();
+}
+
+function buildGrid() {
+    
+    let width = document.getElementsByName('gridWidth')[0].value;
+    let height = document.getElementsByName('gridHeight')[0].value;
+    let alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+    let theTable = "<table class='exampleGrid'>";
+
+    if(height > 0) {
+        //Grid Letter Row
+        theTable+= "<tr>";
+        theTable += "<td></td>";
+
+        for(let j=0; j<width; j++) {
+            theTable += "<td>"+alphabet[j]+"</td>";
+        }
+        theTable+= "</tr>";
+    }
+
+    for(let i=0; i<height; i++) {
+
+        theTable += "<tr>";
+        theTable += "<td class='GridNumber'>"+(i+1)+"</td>"; //Grid Number in the Start of each Row
+
+        for(let j=0; j<width; j++) {
+            theTable += "<td></td>";
+        }
+
+        theTable += "</tr>";
+    }
+
+    theTable += "</table>"
+
+    gridExample.innerHTML = theTable;
 }

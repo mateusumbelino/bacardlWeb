@@ -57,18 +57,28 @@
 
             <div class="cardBox" id="gridBox">            
               <h5>Grid</h5>
-              
-              <p>
-                Configure the Grid
-              </p>
 
-              <div id="gridElements">
-                <p>
-                  <label>Width: </label><input type="number" name="gridWidth"/>                
-                </p>
-                <p>
-                  <label>Height: </label><input type="number" name="gridHeight"/>
-                </p>
+              <div class="row">
+                <div class="col-md-6">    
+                  <p>
+                    Configure the Grid
+                  </p>
+
+                  <div id="gridElements">
+                    <p>
+                      <label>Width: </label><input type="number" name="gridWidth" onchange="buildGrid()"/>                
+                    </p>
+                    <p>
+                      <label>Height: </label><input type="number" name="gridHeight" onchange="buildGrid()"/>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div id="gridExample">
+
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -84,10 +94,17 @@
 
               <div class="collapse" id="layoutInstructions">
                 <div class="cardBox darker">
-                  <h5>How to Use</h5>
-                  <p>You'll need two files, one with the card layout and one with all the card descriptions, alongside all the images used to decorate the card.</p>
-                  <p>You can download an example ZIP file below and customize it to fit your needs:</p>
-                  <button type="button" class="btn btn-success">Download Example</button>
+                  <h5>Specifying the Card's Layout</h5>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>To create your cards, you must first specify each parameter the cards can take.</p>
+                      <p>After creating your grid, you can imagine it like the example shown on the right.</p>
+                      <p>Each section of your layout must be positioned on the grid, specifying on which square the element starts and ends.</p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="imgs/grid.png" style="width: 80%;"/>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -113,10 +130,9 @@
 
             <div class="collapse" id="cardInstructions">
               <div class="cardBox darker">
-                <h5>How to Use</h5>
-                <p>You'll need two files, one with the card layout and one with all the card descriptions, alongside all the images used to decorate the card.</p>
-                <p>You can download an example ZIP file below and customize it to fit your needs:</p>
-                <button type="button" class="btn btn-success">Download Example</button>
+                <h5>Creating the Cards</h5>
+                <p>Each card will be an object containing the options you specified in your Layout.</p>
+                <p>So, after specifying all the parameters for your cards on the layout, you can generate each individual card and inform the value for those parameters.</p>
               </div>
             </div>
 
