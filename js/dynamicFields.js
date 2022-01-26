@@ -38,8 +38,14 @@ function addLayoutField() {
 
 function registerField(fieldObject, fieldGroup) {
     let layoutFieldType = fieldGroup.getElementsByClassName('layoutFieldType')[0].value;
-    let layoutFieldObj = {name: fieldObject.value, type: layoutFieldType};
     
+    let layoutID = fieldGroup.parentElement.id;
+    layoutID = layoutID.charAt(layoutID.length-1);
+    
+    removeLayoutByID(layoutID);
+
+    let layoutFieldObj = {name: fieldObject.value, type: layoutFieldType, id: layoutID};
+
     currentLayoutFields.push(layoutFieldObj);
     updateCardFields();
 }
@@ -110,6 +116,20 @@ function removeLayoutField(layoutObject) {
     }
 
     layoutObject.remove();
+    updateCardFields();
+}
+
+function removeLayoutByID(layoutID) {
+    let layoutOption = currentLayoutFields.find(obj => {
+        return obj.id === layoutID
+    })
+
+    let optionIndex = currentLayoutFields.indexOf(layoutOption);
+
+    if (optionIndex > -1) {
+        currentLayoutFields.splice(optionIndex, 1);
+    }
+
     updateCardFields();
 }
 
