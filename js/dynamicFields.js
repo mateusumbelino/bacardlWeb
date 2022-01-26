@@ -4,21 +4,21 @@ var currentLayoutFields = [];
 const layoutElements = document.getElementById("layoutElements");
 const layoutField = 
 "<div class='fieldGroup'>" +
-"<div> <label>Type<span class='obrigatory'>*</span>:</label> <select name='type' class='layoutFieldType' onchange='showTypeFields(this, this.parentNode.parentNode.parentNode)'><option value='text'>Text</option> <option value='image'>Image</option></select> </div>" +
-"<div> <label>Name<span class='obrigatory'>*</span>:</label> <input type='text' class='layoutFieldName' name='name' onchange='registerField(this, this.parentNode.parentNode)'></input> </div>" +
+"<div> <label>Type<span class='obrigatory'>*</span>:</label> <select name='type' class='layoutFieldType layoutField' onchange='showTypeFields(this, this.parentNode.parentNode.parentNode)'><option value='text'>Text</option> <option value='image'>Image</option></select> </div>" +
+"<div> <label>Name<span class='obrigatory'>*</span>:</label> <input type='text' class='layoutFieldName layoutField' name='name' onchange='registerField(this, this.parentNode.parentNode)'></input> </div>" +
 "</div>" +
 "<div class='fieldGroup'>" +
-"<div> <label>Start<span class='obrigatory'>*</span>:</label> <input type='text' name='start'></input> </div>" +
-"<div> <label>End<span class='obrigatory'>*</span>:</label> <input type='text' name='end'></input> </div>" +
+"<div> <label>Start<span class='obrigatory'>*</span>:</label> <input type='text' name='start' class='layoutField'></input> </div>" +
+"<div> <label>End<span class='obrigatory'>*</span>:</label> <input type='text' name='end' class='layoutField'></input> </div>" +
 "</div>" +
 "<div class='fieldGroup'>" +
-"<div><label>Level<span class='obrigatory'>*</span>:</label> <input type='number' name='level'></input> </div>" +
+"<div><label>Level<span class='obrigatory'>*</span>:</label> <input type='number' name='level' class='layoutField'></input> </div>" +
 "</div>" + 
 "<div class='fieldGroup textDependant'>" +
-"<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' name='scale'></input> </div>" +
+"<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' name='scale' class='layoutField'></input> </div>" +
 "</div>" + 
 "<div class='fieldGroup imageDependant invisible'>" +
-"<div> <label>Default:</label> <input type='file' name='default'></input></div>" +
+"<div> <label>Default:</label> <input type='file' name='default' class='layoutField'></input></div>" +
 "</div>" + 
 "<div class='closeBtn'> <a onclick='removeLayoutField(this.parentNode.parentNode)'>X</a></div>";
 
