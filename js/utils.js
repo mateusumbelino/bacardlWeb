@@ -5,7 +5,6 @@ async function getLayoutObject() {
     obj.size = getSize();
     obj.grid = getGrid();
     obj.layout = await getLayout();
-    console.log(obj.layout)
     return JSON.stringify(obj);
 }
 
@@ -14,8 +13,8 @@ function getSize() {
     // size.width = document.getElementsByName('cardWidth')[0].value;
     // size.height = document.getElementsByName('cardHeight')[0].value;
     // size.unit = document.getElementsByName('cardUnit')[0].value;
-    size.width = 3;
-    size.height = 5;
+    size.width = 30;
+    size.height = 50;
     size.unit = "mm";
     return size;
 }
@@ -24,8 +23,8 @@ function getGrid() {
     const grid = new Object();
     // grid.width = document.getElementsByName('gridWidth')[0].value;
     // grid.height = document.getElementsByName('gridHeight')[0].value;
-    grid.width = 5
-    grid.height = 1
+    grid.width = 5;
+    grid.height = 10;
     return grid;
 }
 
@@ -97,8 +96,8 @@ async function getLayout() {
         obj = new Object();
         obj[campos[0].name] = campos[0].value
         obj[campos[1].name] = campos[1].value
-        obj[campos[2].name] = parseInt(campos[2].value)
-        obj[campos[3].name] = parseInt(campos[3].value)
+        obj[campos[2].name] = campos[2].value
+        obj[campos[3].name] = campos[3].value
         obj[campos[4].name] = parseInt(campos[4].value)
         if (obj.type == 'image') {
             try {
@@ -112,7 +111,7 @@ async function getLayout() {
             }
         }
         else {
-            obj[campos[5].name] = parseInt(campos[5].value)
+            obj[campos[5].name] = parseFloat(campos[5].value)
         }
         array.push(obj)
     }

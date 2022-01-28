@@ -15,7 +15,7 @@ const layoutField =
 "<div><label>Level<span class='obrigatory'>*</span>:</label> <input type='number' name='level' class='layoutField'></input> </div>" +
 "</div>" + 
 "<div class='fieldGroup textDependant'>" +
-"<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' name='scale' class='layoutField'></input> </div>" +
+"<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' min='0' name='scale' class='layoutField'></input> </div>" +
 "</div>" + 
 "<div class='fieldGroup imageDependant invisible'>" +
 "<div> <label>Default:</label> <input type='file' name='default' class='layoutField'></input></div>" +

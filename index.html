@@ -41,16 +41,28 @@
 
               <div id="cardAttributes">
                 <p>
-                  <label>Width: </label><input type="number" name="cardWidth"/>                
+                  <label>Preset: </label>
+                  <select name="cardPreset">
+                    <option value="-">-</option>
+                    <option value="standard">standard</option>
+                    <option value="poker">poker</option>
+                    <option value="mini">mini</option>
+                    <option value="tarot">tarot</option>
+                  </select>              
+                </p>
+                or custom size:
+                <p>
+                  <label>Width: </label><input type="number" name="cardWidth" min="0"/>                
                 </p>
                 <p>
-                  <label>Height: </label><input type="number" name="cardHeight"/>
+                  <label>Height: </label><input type="number" name="cardHeight" min="0"/>
                 </p>
                 <p>
                   <label>Unit: </label>
                   <select name="cardUnit">
                     <option value="px">px</option>
-                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="in">in</option>
                   </select>
                 </p>
               </div>
@@ -113,6 +125,12 @@
 
               </div>
             </div>
+            <div class="cardBox" id="prototypeBox">
+              <h5>Generate Preview</h5>              
+              <p>Click this button to generate a preview of the layout.</p>
+                <input type="submit" class="btn btn-success" value="Generate" onclick="sendLayout()"/>
+            </div>
+  
           </div>
 
         </div>
@@ -151,6 +169,11 @@
           <div class="cardBox card-result">
             <h5>Preview: (First Card Only)</h5>
             <img src="imgs/cardstest-0.png"/>
+          </div>
+          <div class="cardBox" id="downloadBox">
+            <h5>Save Design</h5>              
+            <p>Click this button to save your design.</p>
+              <input type="submit" class="btn btn-success" value="Generate" onclick="sendLayout()"/>
           </div>
 
         </div>

@@ -1,13 +1,12 @@
 function sendLayout()
 {
-    const ajaxUrl = "http://127.0.0.1:8000/junk";
+    const ajaxUrl = "https://bacardiweb.herokuapp.com/layout";
 
     let payload = async function(){
         return await getLayoutObject()
     }
 
     payload().then(function(data){
-        console.log(data)
         $.ajax({
             url : ajaxUrl,
             type : "POST",
@@ -15,11 +14,10 @@ function sendLayout()
             processData: false,
             contentType: 'application/json',
         }).done(function(response){
-            console.log(response.status)
+            console.log(response)
+
         }).fail(function(response){
             console.log(response.status)
-        }).always(function(){
-            alert("AJAX request FUNCIONOU NUNCA DUVIDEI!");
         });
     });
 }
