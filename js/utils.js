@@ -8,6 +8,17 @@ async function getLayoutObject() {
     return JSON.stringify(obj);
 }
 
+async function getCardsObject() {
+    const obj = new Object();
+    const grid = new Object();
+    const size = new Object();
+    obj.size = getSize();
+    obj.grid = getGrid();
+    obj.layout = await getLayout();
+    obj.cards = await getCards();
+    return JSON.stringify(obj);
+}
+
 function getSize() {
     const size = new Object();
     // size.width = document.getElementsByName('cardWidth')[0].value;
@@ -45,7 +56,6 @@ function readFileAsync(file) {
 function base64ArrayBuffer(arrayBuffer) {
     var base64 = ''
     var encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-
     var bytes = new Uint8Array(arrayBuffer)
     var byteLength = bytes.byteLength
     var byteRemainder = byteLength % 3
@@ -84,8 +94,34 @@ function base64ArrayBuffer(arrayBuffer) {
 
         base64 += encodings[a] + encodings[b] + encodings[c] + '='
     }
-
     return base64
+}
+
+async function getCards() {
+    {
+        const array = [];
+        const layouts = Array.from(document.getElementsByClassName('cardsForm'));
+        for (i of layouts) {
+            let campos = Array.from(i.getElementsByClassName('cardsField'))
+            obj = new Object();
+            if (obj.type == 'image') {
+                try {
+                    // TODO: Trocar pelo elemento imagem que esta sendo iterado
+                    let file = document.querySelector('input[type=file]').files[0];
+                    let contentBuffer = await readFileAsync(file);
+                    obj[campos.name] = base64ArrayBuffer(contentBuffer)
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            }
+            else {
+                obj[campos.name] = campos.value
+            }
+            array.push(obj)
+        }
+        return array;
+    }
 }
 
 async function getLayout() {
