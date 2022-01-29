@@ -1,7 +1,7 @@
 
 function sendLayout()
 {
-    const ajaxUrl = "http://bacardiweb.herokuapp.com/layout";
+    const ajaxUrl = "https://bacardiweb.herokuapp.com/layout";
 
     let payload = async function(){
         return await getLayoutObject()
