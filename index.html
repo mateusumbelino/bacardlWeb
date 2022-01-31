@@ -28,7 +28,7 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div id="editor" class="col-md-6 col-lg-6 d-md-block sidebar collapse">
+        <div id="editor" class="col-md-4 col-lg-4 d-md-block sidebar collapse">
 
           <div class="form-group">
             
@@ -135,7 +135,28 @@
 
         </div>
     
-        <div id="resultado" class="col-md-6 col-lg-6 d-md-block sidebar collapse">
+        <div id="resultado" class="col-md-4 col-lg-4 d-md-block sidebar collapse">
+          
+          <div class="cardBox card-result">
+            <h5>Preview</h5>
+            <img id="preview-img" src="imgs/card_preview.png"/>
+          </div>
+
+          <div class="cardBox" id="generationBox">
+            <h5>Generate Cards</h5>              
+            <p>Click this button to generate the cards.</p>
+              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendCards()"/>
+          </div>
+          
+          <div class="cardBox" id="downloadBox">
+            <h5>Save Design</h5>
+            <p>Click this button to save your design.</p>
+              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendLayout()"/>
+          </div>
+
+        </div>
+
+        <div id="cards" class="col-md-4 col-lg-4 d-md-block sidebar collapse">
           
           <div class="cardBox" id="cardsBox">            
             <h5>Cards</h5>
@@ -158,22 +179,6 @@
             <div id="cardElements">
 
             </div>
-          </div>
-
-          <div class="cardBox" id="generationBox">
-            <h5>Generate Cards</h5>              
-            <p>Click this button to generate the cards.</p>
-              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendCards()"/>
-          </div>
-
-          <div class="cardBox card-result">
-            <h5>Preview</h5>
-            <img id="preview-img" src="imgs/cardstest-0.png"/>
-          </div>
-          <div class="cardBox" id="downloadBox">
-            <h5>Save Design</h5>              
-            <p>Click this button to save your design.</p>
-              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendLayout()"/>
           </div>
 
         </div>
