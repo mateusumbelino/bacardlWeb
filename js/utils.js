@@ -1,22 +1,31 @@
 async function getLayoutObject() {
     const obj = new Object();
-    const grid = new Object();
-    const size = new Object();
-    obj.size = getSize();
-    obj.grid = getGrid();
+    let preset = getPreset();
+    console.log(preset)
+    if (preset != '-')
+        obj.preset = preset;
+    else
+        obj.size = getSize();
+    obj.grid = getGrid();  
     obj.layout = await getLayout();
     return JSON.stringify(obj);
 }
 
 async function getCardsObject() {
     const obj = new Object();
-    const grid = new Object();
-    const size = new Object();
-    obj.size = getSize();
-    obj.grid = getGrid();
-    obj.layout = await getLayout();
     obj.cards = await getCards();
     return JSON.stringify(obj);
+}
+
+function getPreset() {
+    return document.getElementsByName('cardPreset')[0].value;
+}
+
+function getGrid() {
+    const grid = new Object();
+    grid.width = document.getElementsByName('gridWidth')[0].value;
+    grid.height = document.getElementsByName('gridHeight')[0].value;
+    return grid;
 }
 
 function getSize() {
@@ -26,13 +35,6 @@ function getSize() {
     size.unit = document.getElementsByName('cardUnit')[0].value;
 
     return size;
-}
-
-function getGrid() {
-    const grid = new Object();
-    grid.width = document.getElementsByName('gridWidth')[0].value;
-    grid.height = document.getElementsByName('gridHeight')[0].value;
-    return grid;
 }
 
 function readFileAsync(file) {

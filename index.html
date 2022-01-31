@@ -44,7 +44,7 @@
                   <label>Preset: </label>
                   <select name="cardPreset">
                     <option value="-">-</option>
-                    <option value="standard">standard</option>
+                    <option value="bridge">bridge</option>
                     <option value="poker">poker</option>
                     <option value="mini">mini</option>
                     <option value="tarot">tarot</option>
@@ -79,10 +79,10 @@
 
                   <div id="gridElements">
                     <p>
-                      <label>Width: </label><input type="number" name="gridWidth" onchange="buildGrid()"/>                
+                      <label>Width: </label><input type="number" name="gridWidth" min="0" onchange="buildGrid()"/>                
                     </p>
                     <p>
-                      <label>Height: </label><input type="number" name="gridHeight" onchange="buildGrid()"/>
+                      <label>Height: </label><input type="number" name="gridHeight" min="0" onchange="buildGrid()"/>
                     </p>
                   </div>
                 </div>
