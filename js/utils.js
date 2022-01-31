@@ -21,21 +21,17 @@ async function getCardsObject() {
 
 function getSize() {
     const size = new Object();
-    // size.width = document.getElementsByName('cardWidth')[0].value;
-    // size.height = document.getElementsByName('cardHeight')[0].value;
-    // size.unit = document.getElementsByName('cardUnit')[0].value;
-    size.width = 30;
-    size.height = 50;
-    size.unit = "mm";
+    size.width = document.getElementsByName('cardWidth')[0].value;
+    size.height = document.getElementsByName('cardHeight')[0].value;
+    size.unit = document.getElementsByName('cardUnit')[0].value;
+
     return size;
 }
 
 function getGrid() {
     const grid = new Object();
-    // grid.width = document.getElementsByName('gridWidth')[0].value;
-    // grid.height = document.getElementsByName('gridHeight')[0].value;
-    grid.width = 5;
-    grid.height = 10;
+    grid.width = document.getElementsByName('gridWidth')[0].value;
+    grid.height = document.getElementsByName('gridHeight')[0].value;
     return grid;
 }
 

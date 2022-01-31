@@ -26,10 +26,10 @@ function sendLayout()
 
 function sendCards()
 {
-    const ajaxUrl = "http://bacardiweb.herokuapp.com/create";
+    const ajaxUrl = "https://bacardiweb.herokuapp.com/create";
 
     let payload = async function(){
-        return await getLayoutObject()
+        return await getCardsObject()
     }
 
     payload().then(function(data){
