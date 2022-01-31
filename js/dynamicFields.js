@@ -18,7 +18,7 @@ const layoutField =
 "<div> <label>Font Size<span class='obrigatory'>*</span>:</label> <input type='number' value='1' min='0' name='scale' class='layoutField'></input> </div>" +
 "</div>" + 
 "<div class='fieldGroup imageDependant invisible'>" +
-"<div> <label>Default:</label> <input type='file' name='default' class='layoutField'></input></div>" +
+"<div> <label>Default:</label> <input type='file' name='default' class='layoutField defaultImage'></input></div>" +
 "</div>" + 
 "<div class='closeBtn'> <a onclick='removeLayoutField(this.parentNode.parentNode)'>X</a></div>";
 

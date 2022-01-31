@@ -2,22 +2,32 @@ header.sitenav {
     display: flex;
     justify-content: center;
     padding: 10px 0px 5px 0px;
+    border-bottom: 1px solid #ef1c63;
 }
 
 h1.sitetitle {
     font-size: 30px;
-    color: white;
+    color: #94ca04;
+}
+
+.container-fluid, .cardBox.darker {
+    background: #222222;
 }
 
 .cardBox {
     padding: 15px;
-    background: rgb(221, 220, 220);
+    background: #353535;
     border-radius: 10px;
     margin: 20px 10px;
+    border-bottom: 2px solid #ef1c63;
 }
 
-.cardBox.darker {
-    background: rgb(150, 150, 150);
+div.cardBox h5 {
+    color: #94ca04;
+}
+
+.cardBox p, .cardBox label {
+    color: #e3da7d;
 }
 
 .btn-instructions {

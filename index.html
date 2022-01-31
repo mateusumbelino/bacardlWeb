@@ -28,7 +28,7 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div id="editor" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
+        <div id="editor" class="col-md-6 col-lg-6 d-md-block sidebar collapse">
 
           <div class="form-group">
             
@@ -50,7 +50,7 @@
                     <option value="tarot">tarot</option>
                   </select>              
                 </p>
-                or custom size:
+                <p>or custom size:</p>
                 <p>
                   <label>Width: </label><input type="number" name="cardWidth" min="0"/>                
                 </p>
@@ -99,7 +99,7 @@
               <h5>Layout</h5>
               
               <p>
-                <a class="btn btn-info" onclick="addLayoutField()">Add New Field</a>
+                <a class="btn btn-pink" onclick="addLayoutField()">Add New Field</a>
                 <a class="btn btn-instructions" data-bs-toggle="collapse" href="#layoutInstructions" role="button" aria-expanded="false" aria-controls="instructions">
                   ?
                 </a>
@@ -128,20 +128,20 @@
             <div class="cardBox" id="prototypeBox">
               <h5>Generate Preview</h5>              
               <p>Click this button to generate a preview of the layout.</p>
-                <input type="submit" class="btn btn-success" value="Generate" onclick="sendLayout()"/>
+                <input type="submit" class="btn btn-pink" value="Generate" onclick="sendLayout()"/>
             </div>
   
           </div>
 
         </div>
     
-        <div id="resultado" class="col-md-6 col-lg-6 d-md-block bg-light sidebar collapse">
+        <div id="resultado" class="col-md-6 col-lg-6 d-md-block sidebar collapse">
           
           <div class="cardBox" id="cardsBox">            
             <h5>Cards</h5>
             
             <p>
-              <a class="btn btn-info" onclick="addCardField()">Add New Card</a>
+              <a class="btn btn-pink" onclick="addCardField()">Add New Card</a>
               <a class="btn btn-instructions" data-bs-toggle="collapse" href="#cardInstructions" role="button" aria-expanded="false" aria-controls="instructions">
                 ?
               </a>
@@ -163,7 +163,7 @@
           <div class="cardBox" id="generationBox">
             <h5>Generate Cards</h5>              
             <p>Click this button to generate the cards.</p>
-              <input type="submit" class="btn btn-success" value="Generate" onclick="sendCards()"/>
+              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendCards()"/>
           </div>
 
           <div class="cardBox card-result">
@@ -173,7 +173,7 @@
           <div class="cardBox" id="downloadBox">
             <h5>Save Design</h5>              
             <p>Click this button to save your design.</p>
-              <input type="submit" class="btn btn-success" value="Generate" onclick="sendLayout()"/>
+              <input type="submit" class="btn btn-pink" value="Generate" onclick="sendLayout()"/>
           </div>
 
         </div>

@@ -1,5 +1,5 @@
 .layoutForm, .cardForm {
-    background-color: #bababa;
+    background-color: #222222;
     border-radius: 15px;
     padding: 15px 20px;
     margin: 20px 0px 0px 0px;
@@ -20,6 +20,28 @@
 
 .fieldGroup div label, .level label {
     min-width: 50px;
+}
+
+.btn-pink {
+    color: #fff;
+    background: #ef1c63;
+}
+
+input, select {
+    background: #222222;
+    border: 0px;
+    border-radius: 15px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.fieldGroup input,
+.fieldGroup select,
+.cardForm input,
+.cardForm select {
+    background: #353535;
+    margin-bottom: 5px;
 }
 
 .closeBtn {

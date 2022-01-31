@@ -103,7 +103,8 @@ async function getCards() {
             if (obj.type == 'image') {
                 try {
                     // TODO: Trocar pelo elemento imagem que esta sendo iterado
-                    let file = document.querySelector('input[type=file]').files[0];
+                    //let file = document.querySelector('input[type=file]').files[0];
+                    let file = i.getElementsByClassName('defaultImage')[0].files[0];
                     let contentBuffer = await readFileAsync(file);
                     obj[campos.name] = base64ArrayBuffer(contentBuffer)
                 }
@@ -134,7 +135,8 @@ async function getLayout() {
         if (obj.type == 'image') {
             try {
                 // TODO: Trocar pelo elemento imagem que esta sendo iterado
-                let file = document.querySelector('input[type=file]').files[0];
+                //let file = document.querySelector('input[type=file]').files[0];
+                let file = i.getElementsByClassName('defaultImage')[0].files[0];
                 let contentBuffer = await readFileAsync(file);
                 obj[campos[6].name] = base64ArrayBuffer(contentBuffer)
             }
