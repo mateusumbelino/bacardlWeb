@@ -83,8 +83,8 @@ function updateCardFields() {
             currentField.className = "cardField";
             
             //Check if the field is an image
-            if(fieldType == 'text') currentField.innerHTML = "<div> <label>" + fieldName + ":</label> <input type='text' name='" + fieldName + "'></input> </div>";
-            else currentField.innerHTML = "<div> <label>" + fieldName + ":</label> <input type='file' name='" + fieldName + "'></input> </div>";
+            if(fieldType == 'text') currentField.innerHTML = "<div> <label>" + fieldName + ":</label> <input type='text' class='cardInfo' name='" + fieldName + "'></input> </div>";
+            else currentField.innerHTML = "<div> <label>" + fieldName + ":</label> <input type='file' class='cardInfo' name='" + fieldName + "'></input> </div>";
             
             cardField.appendChild(currentField);
         }

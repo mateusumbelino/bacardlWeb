@@ -98,24 +98,19 @@ function base64ArrayBuffer(arrayBuffer) {
 async function getCards() {
     {
         const array = [];
-        const layouts = Array.from(document.getElementsByClassName('cardsForm'));
+        const layouts = Array.from(document.getElementsByClassName('cardForm'));
         for (i of layouts) {
-            let campos = Array.from(i.getElementsByClassName('cardsField'))
+            let campos = Array.from(i.getElementsByClassName('cardField'))
             obj = new Object();
-            if (obj.type == 'image') {
-                try {
-                    // TODO: Trocar pelo elemento imagem que esta sendo iterado
-                    //let file = document.querySelector('input[type=file]').files[0];
-                    let file = i.getElementsByClassName('defaultImage')[0].files[0];
+            for(j of campos) {
+                let fieldInfo = j.getElementsByClassName('cardInfo')[0];
+                if (fieldInfo.type == 'file') {
+                    let file = fieldInfo.files[0];
                     let contentBuffer = await readFileAsync(file);
-                    obj[campos.name] = base64ArrayBuffer(contentBuffer)
+                    obj[fieldInfo.name] = base64ArrayBuffer(contentBuffer)
+                } else {
+                    obj[fieldInfo.name] = fieldInfo.value;
                 }
-                catch (err) {
-                    console.log(err);
-                }
-            }
-            else {
-                obj[campos.name] = campos.value
             }
             array.push(obj)
         }
