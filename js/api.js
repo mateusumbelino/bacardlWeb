@@ -33,16 +33,35 @@ function sendCards()
     }
 
     payload().then(function(data){
-        $.ajax({
-            url : ajaxUrl,
-            type : "POST",
-            data : data,
-            processData: false,
-            contentType: 'application/json',
-        }).done(function(response){
-            console.log(response);
-        }).fail(function(response){
-            console.log(response.status)
+        fetch(ajaxUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: data
+        }).then((response) => {
+            response.blob().then((blob) => {
+                const downloadUrl = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.setAttribute('href', downloadUrl);
+                link.setAttribute('download', 'file');
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                window.URL.revokeObjectURL(link.href);
+                document.body.removeChild(link);
+            })
         });
+        // $.ajax({
+        //     url : ajaxUrl,
+        //     type : "POST",
+        //     data : data,
+        //     processData: false,
+        //     contentType: 'application/json',
+        // }).done(function(response){
+        //     console.log(response);
+        // }).fail(function(response){
+        //     console.log(response.status)
+        // });
     });
 }
