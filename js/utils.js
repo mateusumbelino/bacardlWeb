@@ -1,7 +1,6 @@
 async function getLayoutObject() {
     const obj = new Object();
     let preset = getPreset();
-    console.log(preset)
     if (preset != '-')
         obj.preset = preset;
     else
@@ -13,6 +12,13 @@ async function getLayoutObject() {
 
 async function getCardsObject() {
     const obj = new Object();
+    let preset = getPreset();
+    if (preset != '-')
+        obj.preset = preset;
+    else
+        obj.size = getSize();
+    obj.grid = getGrid();  
+    obj.layout = await getLayout();
     obj.cards = await getCards();
     return JSON.stringify(obj);
 }
