@@ -1,3 +1,7 @@
+body {
+    background: #222222;
+}
+
 header.sitenav {
     display: flex;
     justify-content: center;
